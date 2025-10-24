@@ -1,0 +1,25 @@
+#include <iostream>      
+#include <cstring>
+using namespace std;
+int main() {
+	setlocale(LC_ALL, "RU");
+	int s = 0;
+
+	char str1[100];
+	cin.getline(str1, 100);
+	int len = strlen(str1);
+	bool flag = false;
+	for (int i = len - 1; i >= 0; i--) {
+		if (isalpha(str1[i]) && tolower(str1[i]) == 'a') {
+			s++;
+			flag = true;
+		}
+		else if (flag == true && !isalpha(str1[i])) {
+			break;
+		}
+	}
+	
+
+	cout << s;
+	return 0;
+}
